@@ -32,4 +32,33 @@ public class CarShop {
         }
         return false;
     }
+
+    public int sumCarPrice(){
+        long sum = 0;
+        for (Car element: carsForSell){
+            sum += element.getPrice();
+        }
+        return (int) sum;
+    }
+
+    public int numberOfCarsCheaperThan(int price){
+        int result = 0;
+        for (Car element: carsForSell){
+            if (element.getPrice()<=price){
+                result++;
+            }
+        }
+        return result;
+    }
+
+    public List<Car> carsWithBrand(String brand){
+        List<Car> result = new ArrayList<>();
+        for (Car element: carsForSell){
+            if (element.getBrand().equals(brand)){
+                result.add(element);
+            }
+        }
+        return result;
+    }
+
 }
